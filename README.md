@@ -1,1 +1,1 @@
-# Database-for-GQG
+## Database using MySQL via XAMPP
