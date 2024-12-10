@@ -10,3 +10,5 @@ http://localhost/phpmyadmin/
 ```
 ### Install packages on Microsoft Visual Studio 2022
 Tools > NuGet Package Manager > Manage NuGet Packages for solution...
+- MySql.Data (by Oracle)
+- MySqlConnector (by Bradley Grainger)
