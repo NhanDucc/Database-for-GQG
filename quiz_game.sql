@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 08, 2024 lúc 05:53 AM
+-- Thời gian đã tạo: Th12 11, 2024 lúc 02:13 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.0.30
 
@@ -39,24 +39,30 @@ CREATE TABLE `answers` (
 --
 
 INSERT INTO `answers` (`answer_id`, `question_id`, `answer_text`, `is_correct`) VALUES
-(132, 18, 'A. United States', 0),
-(133, 18, 'B. Russia', 0),
-(134, 18, 'C. Canada', 0),
-(135, 18, 'D. China', 0),
-(136, 19, 'A. Mississippi', 0),
-(137, 19, 'B. Nile', 0),
-(138, 19, 'C. Amazon', 0),
-(139, 19, 'D. Yangtze', 0),
-(140, 20, 'A. Brisbane', 0),
-(141, 20, 'B. Melbourne', 0),
-(142, 20, 'C. Sydney', 0),
-(143, 20, 'D. Canberra', 0),
-(144, 21, 'False', 1),
-(145, 22, 'True', 1),
-(146, 26, 'Aconcagua', 1),
-(147, 26, 'Aconcagua Mountain', 1),
-(148, 27, 'Seine', 1),
-(149, 27, 'Seine River', 1);
+(296, 18, 'Russia', 1),
+(297, 18, 'Canada', 0),
+(298, 18, 'United States', 0),
+(299, 18, 'China', 0),
+(300, 19, 'Amazon', 0),
+(301, 19, 'Yangtze', 0),
+(302, 19, 'Nile', 1),
+(303, 19, 'Mississippi', 0),
+(304, 20, 'Sydney', 0),
+(305, 20, 'Canberra', 1),
+(306, 20, 'Melbourne', 0),
+(307, 20, 'Brisbane', 0),
+(308, 21, 'False', 1),
+(309, 22, 'True', 1),
+(310, 26, 'Aconcagua', 1),
+(311, 26, 'Aconcagua Mountain', 1),
+(312, 27, 'Seine', 1),
+(313, 27, 'Seine River', 1),
+(314, 29, 'False', 1),
+(315, 30, 'Ha Noi', 1),
+(316, 30, 'HaNoi', 1),
+(317, 30, 'Ha Noi Capital', 1),
+(318, 30, 'HaNoiCapital', 1),
+(319, 30, 'HN', 1);
 
 -- --------------------------------------------------------
 
@@ -81,7 +87,9 @@ INSERT INTO `questions` (`question_id`, `question_text`, `question_type`) VALUES
 (21, 'The Sahara is the largest desert in the world.', 'TrueFalse'),
 (22, 'Mount Everest is located in both Nepal and China.', 'TrueFalse'),
 (26, 'What is the name of the highest mountain in South America?', 'OpenEnded'),
-(27, 'Name the river that flows through Paris.', 'OpenEnded');
+(27, 'Name the river that flows through Paris.', 'OpenEnded'),
+(29, 'The Amazon River is the longest river in the world.', 'TrueFalse'),
+(30, 'What is the capital city of Vietnam?', 'OpenEnded');
 
 -- --------------------------------------------------------
 
@@ -104,9 +112,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `role`, `score`, `time_taken`) VALUES
 (4, 'admin', '$2a$11$85DmyAaLWIiNWMV0ydBPxOE0rOhXvygsFnASwjXEDrk3JIt8EgeeS', 'Admin', 0, 0),
-(5, 'ducky', '$2a$11$/NOmynBitzjjGCuoH.SJVO5PqhL/nrrAgDcK/TQ8FJ6KNOu0zH6gG', 'Player', 5, 0.8309273233333333),
-(6, 'user1', '$2a$11$NK9m6fhqZmx/OPpo0xrGAeScOhVMGdm72oMEK04MDVBDeTu57e9zC', 'Player', 3, 0.20038389833333334),
-(7, 'user2', '$2a$11$hNmRzi216QCiCK.UeYtALuDBXrZSnNKZ/NJKc/Z29f4FAxiAwojve', 'Player', 0, 0);
+(5, 'ducky', '$2a$11$/NOmynBitzjjGCuoH.SJVO5PqhL/nrrAgDcK/TQ8FJ6KNOu0zH6gG', 'Player', 5, 0.032821598333333334),
+(6, 'user1', '$2a$11$NK9m6fhqZmx/OPpo0xrGAeScOhVMGdm72oMEK04MDVBDeTu57e9zC', 'Player', 5, 0.8803285166666667),
+(7, 'user2', '$2a$11$hNmRzi216QCiCK.UeYtALuDBXrZSnNKZ/NJKc/Z29f4FAxiAwojve', 'Player', 0, 0),
+(22, 'usser', '$2a$11$BOvZs/2xTWOiuAyu6jxcou3KyoiGUz2gYBK3G4LBNX6E8wAc9MAUO', 'Player', 2, 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -139,19 +148,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=320;
 
 --
 -- AUTO_INCREMENT cho bảng `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `question_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
